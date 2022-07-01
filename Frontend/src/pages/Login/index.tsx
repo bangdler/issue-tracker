@@ -13,6 +13,7 @@ export default function Login() {
   const navigate = useNavigate();
   const [cookies] = useCookies(['refreshToken']);
   const { loginStatus, setLoginStatus } = useContext(LoginStatusContext);
+  console.log(process.env.SERVER_ENDPOINT);
 
   const issueNumber = 1;
   const [loginInputValue, setLoginInputValue] = useState({
@@ -69,7 +70,6 @@ export default function Login() {
       return;
     }
     const url: AxiosResponse = await axios.get(LOGIN_REQUEST_URL);
-    console.log(process.env.SERVER_ENDPOINT);
     window.location.href = url.data;
   };
 

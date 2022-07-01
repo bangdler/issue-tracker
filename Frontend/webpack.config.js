@@ -35,12 +35,12 @@ module.exports = {
     client: {
       overlay: true,
     },
-    port: 8080,
+    port: 3000,
     historyApiFallback: true,
     open: true,
     proxy: {
       '/login': {
-        target: 'http://3.34.46.187:8080',
+        target: process.env.SERVER_ENDPOINT,
       },
       '/api': {
         target: process.env.SERVER_ENDPOINT,
